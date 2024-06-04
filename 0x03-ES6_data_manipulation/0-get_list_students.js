@@ -1,4 +1,7 @@
-#!/usr/bin/node
+/**
+ * Retrives a list of students
+ * @returns {{id: Number, firstName: String, location: String}[]}
+ */
 
 export default function getListStudents() {
   return [
