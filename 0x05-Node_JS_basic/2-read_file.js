@@ -14,18 +14,20 @@ function countStudents(path) {
   const results = [];
   fs.createReadStream(path)
     .pipe(csv())
-    .on('data', (data) => results.push(data))
+    .on('data', (data) => {
+      if (data.field && data.firstname
+            && Object.values(data).some((value) => value.trim() !== '')) {
+        results.push(data);
+      }
+    })
     .on('end', () => {
-      const validResults = results.filter(
-        (result) => Object.keys(result).length > 0 && result.field && result.firstname,
-      );
       console.log(`Number of students: ${results.length}`);
       let cs = 0;
       let swe = 0;
       const csStudents = [];
       const sweStudents = [];
 
-      for (const result of validResults) {
+      for (const result of results) {
         if (result.field === 'CS') {
           cs += 1;
           csStudents.push(result.firstname);
