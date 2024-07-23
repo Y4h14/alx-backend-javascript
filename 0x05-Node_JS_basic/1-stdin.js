@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-process.stdout.write('Welcome to Holberton School, what is our name?\n');
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
 process.stdin.on('readable', () => {
   const chunk = process.stdin.read();
