@@ -2,6 +2,7 @@
 const { expect } = require('chai');
 const getPaymentTokenFromAPI = require('./6-payment_token');
 
+// eslint-disable-next-line jest/valid-describe
 describe('getPaymentTokenFromAPI', (done) => {
   // eslint-disable-next-line jest/prefer-expect-assertions
   it('test with true', () => {

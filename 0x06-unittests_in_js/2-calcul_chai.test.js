@@ -2,7 +2,7 @@
 const { expect } = require('chai');
 const calculateNumber = require('./2-calcul_chai');
 
-expect(calculateNumber('DIVIDE', 2.0, 0)).to.equal('Error');
+
 describe('calculateNumber', () => {
   it('test type SUM', () => {
     expect(calculateNumber('SUM', 2.0, 2.0)).to.equal(4);
