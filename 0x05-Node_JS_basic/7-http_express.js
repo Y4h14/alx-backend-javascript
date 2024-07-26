@@ -35,7 +35,7 @@ app.get('/students', async (_, res) => {
     let lineCount = 0;
     for (const [field, firstnames] of Object.entries(fields)) {
       responseText += `Number of students in ${field}: ${firstnames.length}. List: ${firstnames.join(', ')}`;
-      if (lineCount == 0) {
+      if (lineCount === 0) {
         responseText += '\n';
         lineCount += 1;
       }
