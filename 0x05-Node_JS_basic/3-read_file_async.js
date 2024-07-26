@@ -1,12 +1,12 @@
 #!/usr/bin/node
 const fs = require('fs').promises;
 
-function countStudents(path) {
+async function countStudents(path) {
   if (!fs.existsSync(path) || !fs.statSync(path).isFile) {
     throw new Error('Cannot load the database');
   }
 
-  const fileLines = fs.readFileSync(path, 'utf8').trim().split('\n');
+  const fileLines = await fs.readFileSync(path, 'utf8').trim().split('\n');
   if (fileLines.length < 2) throw new Error('Cannot load the database');
 
   const students = fileLines.slice(1);
